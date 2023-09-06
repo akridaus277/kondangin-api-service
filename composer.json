@@ -5,12 +5,20 @@
     "keywords": ["framework", "laravel"],
     "license": "MIT",
     "require": {
-        "php": "^7.3|^8.0",
+        "php": ">=7.3",
+        "bref/bref": "^1.7",
+        "bref/laravel-bridge": "^1.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "intervention/image": "^2.7",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
-        "laravel/tinker": "^2.5"
+        "laravel/tinker": "^2.5",
+        "laravel/ui": "3.4",
+        "maatwebsite/excel": "^3.1",
+        "marcin-orlowski/laravel-api-response-builder": "^9.3",
+        "php-open-source-saver/jwt-auth": "1.4.2",
+        "stancl/tenancy": "^3.6"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -55,7 +63,10 @@
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
-        "sort-packages": true
+        "sort-packages": true,
+        "platform": {
+            "php": "7.4.32"
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true

@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use App\Http\Middleware\LogRoute;
 
 class Kernel extends HttpKernel
 {
@@ -20,6 +21,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\PreventRequestsDuringMaintenance::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
+        \App\Http\Middleware\Cors::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
     ];
 
@@ -63,5 +65,8 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'log.route' => LogRoute::class,
+        'initialize.tenancy.by.subdomain' => \Stancl\Tenancy\Middleware\InitializeTenancyBySubDomain::class,
+        'prevent.access.from.centraldomain' => \Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains::class,
     ];
 }
